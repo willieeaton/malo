@@ -1,34 +1,55 @@
 # Project diary
 
-### March 18, 2020 (Tues.)
+### Week 2
+
+### March 17, 2020 (Tues.)
 * After watching mentor Ernesto's demonstration of a CVS program using EntityFramework to model database, conversed with him; will be using EntityFramework and SQL Lite to model database.
 * With Ernesto's guidance, finally landed on WPF for application type.
 * Submitted final project plan (README.md in github repo).
 * **Need to learn at this point in order to proceed with project: WPF basics, SQL Lite basics, EntityFramework basics.**
 	* Will be using the Treehouse courses on SQL Basics and EntityFramework Basics to get an understanding of that; will need to find WPF tutorials online.
 
-### March 19, 2020 (Wed.)
+### March 18, 2020 (Wed.)
 * Created this project journal to track the time I spend on this application.
 * Began the SQL Basics course on Treehouse.
 	* Began and finished "Data, Databases, and SQL" (chapter 1/3)
 	* Began and finished "Getting Data from a Database" (chapter 2/3) 
 	* Began "Finding the Data You Want" (chapter 3/3)
   
-### March 20, 2021 (Thurs.)
+### March 19, 2020 (Thurs.)
 * Created TODO section at bottom of journal.md.
 * Resumed and completed SQL Basics course on Treehouse.
 	* Resumed and completed "Finding the Data You Want" (chapter 3/3)
 * Began the Entity Framework Basics course on Treehouse.
 	* Began "Introducing Entity Framework" (chapter 1/5)
 	
+### March 20, 2020 (Fri.)
+* Resumed Entity Framework Basics course on Treehouse.
+	* Resumed and completed "Introducing Entity Framework" (chapter 1/5)
+	* Began "Entity Framework and Databases" (chapter 2/5)
+		
+### March 22, 2020 (Sun.)
+* Resumed Entity Framework Basics course on Treehouse.
+	* Resumed and completed "Entity Framework and Databases" (chapter 2/5)
+	* Began and completed "Extending Our Entity Data Model" (chapter 3/5)
+	* Began and completed "LINQ Queries" (chapter 4/5)
+	* Began "CRUD Operations" (chapter 5/5)
 	
-## TODO
+### Week 3
+### March 23, 2020 (Mon.)
+* Resumed and completed Entity Framework Basics course on Treehouse.
+	* Resumed and completed "CRUD Operations" (chapter 5/5)
+* Began Microsoft tutorial "Walkthrough: My First WPF Desktop Application"
+
+### March 24, 2020 (Tues.)
+* Began to implement the entity classes.
+	
+# TODO
 
 ### Week 2
-- [x] (:heavy_check_mark: Mar. 20) *Complete SQL Basics on Treehouse (179-minute Beginner-level Databases course)*
-- [ ] Complete Entity Framework Basics on Treehouse (299-minute Intermediate-level C# course)
+- [x] (:heavy_check_mark: Mar. 19) *Complete SQL Basics on Treehouse (179-minute Beginner-level Databases course)*
+- [x] (:heavy_check_mark: Mar. 23) *Complete Entity Framework Basics on Treehouse (299-minute Intermediate-level C# course)*
 - [ ] Find and complete basic WPF UI tutorial
-- [ ] Complete breakdown of to-do list on this form *(Currently through Week 3)*
 
 ### Week 3
 - [ ] Create (placeholder/skeleton) interface
