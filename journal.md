@@ -43,13 +43,22 @@
 
 ### March 24, 2020 (Tues.)
 * Began to implement the entity classes.
+
+### March 25, 2020 (Wed.)
+* Continued to implement entity classes.
+* Attempted to connect entities to Sqlite server.
+* Bashed head against "Sqlite error 1: No such table" error
+
+### March 26, 2020 (Thurs.)
+* Resumed bashing of head
+* Actually got the database working!  Turns out I needed "Database.EnsureCreated()" in there.
 	
 # TODO
 
 ### Week 2
 - [x] (:heavy_check_mark: Mar. 19) *Complete SQL Basics on Treehouse (179-minute Beginner-level Databases course)*
 - [x] (:heavy_check_mark: Mar. 23) *Complete Entity Framework Basics on Treehouse (299-minute Intermediate-level C# course)*
-- [ ] Find and complete basic WPF UI tutorial
+- [x] Find and complete basic WPF UI tutorial
 
 ### Week 3
 - [ ] Create (placeholder/skeleton) interface
