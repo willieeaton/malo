@@ -4,14 +4,18 @@ using System.Text;
 
 namespace malo.Models
 {
-    class Tag
+    public class Tag
     {
+        public Tag()
+        {
+            PwadTags = new List<PwadTag>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
         //public something Color { get; set; }
 
-        //public something Pwad(s) { get; set; } // many-to-many
+        public ICollection<PwadTag> PwadTags { get; set; } // many-to-many
     }
 }
