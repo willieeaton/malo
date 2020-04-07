@@ -31,35 +31,7 @@ namespace malo
         {
             InitializeComponent();
 
-            var optionsBuilder = new DbContextOptionsBuilder<Context>();
-            string databaseLocation = "Data Source=";
-            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
-            databaseLocation += "malo.db";
-            Debug.WriteLine(databaseLocation);
-            optionsBuilder.UseSqlite(databaseLocation);
-            using (Context context = new Context(optionsBuilder.Options))
-            {
-                //test adding some partial data
-
-                //Pwad gamewad = new Pwad
-                //    { Name = "Scythe", Description = "Testing Scythe"};
-                //context.Pwads.Add(gamewad);
-                //gamewad = new Pwad
-                //{ Name = "Ancient Aliens", Description = "A 32-level megawad by Skillsaw" };
-                //context.Pwads.Add(gamewad);
-
-                context.SaveChanges();
-
-                var readwad = context.Pwads.ToList();
-                foreach (Pwad p in readwad)
-                {
-                    Debug.WriteLine($"PWAD PK ID number {p.Id}");
-                    Debug.WriteLine($"Name: {p.Name}");
-                    Debug.WriteLine($"Description: {p.Description}"); 
-                    Debug.WriteLine("---");
-                }
-            }
-        
+            var dummyTable = new EstablishDummyData();
         }
     }
 }

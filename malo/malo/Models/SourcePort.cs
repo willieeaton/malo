@@ -12,6 +12,7 @@ namespace malo.Models
         public bool IsConfigured { get; set; }
         public string HomepageURL { get; set; }
         public bool IsUserAdded { get; set; }
+        public string ConfigFileLocation { get; set; }
 
     }
 

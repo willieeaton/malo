@@ -11,5 +11,10 @@ namespace malo.Models
         public string Description { get; set; }
         public string FileLocation { get; set; }
         public string FileName { get; set; }
+
+        public string FileFolder
+        {
+            get => FileLocation.Substring(0, FileLocation.LastIndexOf('\\') + 1);
+        }
     }
 }

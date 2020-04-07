@@ -36,6 +36,7 @@
 	* Began "CRUD Operations" (chapter 5/5)
 	
 ### Week 3
+
 ### March 23, 2020 (Mon.)
 * Resumed and completed Entity Framework Basics course on Treehouse.
 	* Resumed and completed "CRUD Operations" (chapter 5/5)
@@ -52,25 +53,31 @@
 ### March 26, 2020 (Thurs.)
 * Resumed bashing of head
 * Actually got the database working!  Turns out I needed "Database.EnsureCreated()" in there.
+
+###Week 5
 	
+### April 7, 2020 (Tues.)
+* Continued to expand defintion of entity classes over last week
+* Program now launches the chosen executable with chosen game and levels!
+
 # TODO
 
 ### Week 2
 - [x] (:heavy_check_mark: Mar. 19) *Complete SQL Basics on Treehouse (179-minute Beginner-level Databases course)*
 - [x] (:heavy_check_mark: Mar. 23) *Complete Entity Framework Basics on Treehouse (299-minute Intermediate-level C# course)*
-- [x] Find and complete basic WPF UI tutorial
+- [x] (:heavy_check_mark: Mar. 23) *Find and complete basic WPF UI tutorial*
 
 ### Week 3
 - [ ] Create (placeholder/skeleton) interface
 ##### From Project Plan milestones: 
 - [ ] Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.
-	* - [ ] Create basic parent class for game data files
+	* - [x] (:heavy_check_mark: During Week 3) Create basic parent class for game data files
 	* - [ ] Implement "Open file" dialog
-	* - [ ] Implement very basic elements of database (filename, location, identity)
+	* - [x] (:heavy_check_mark: During Week 3) Implement very basic elements of database (filename, location, identity)
 
 ### Week 4
 ##### From Project Plan milestones: 
-- [ ] Allow user to launch game executable from inside app, with command line arguments.
+- [x] (:heavy_check_mark: Apr. 7) Allow user to launch game executable from inside app, with command line arguments.
 	
 ### Week 5
 ##### From Project Plan milestones: 
