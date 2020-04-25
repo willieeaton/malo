@@ -16,8 +16,6 @@ namespace malo.Data
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
-            Database.EnsureDeleted(); // DROPS DATABASE!
-            // make sure the above isn't here once we're done using test data
             Database.EnsureCreated();
         }
 
