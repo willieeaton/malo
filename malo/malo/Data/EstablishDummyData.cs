@@ -71,7 +71,7 @@ namespace malo.Data
                     Debug.WriteLine("---");
                 }
 
-                new CommandLine(crispyDoom, doom2Iwad, new List<Pwad> { scythe });
+                //new CommandLine(crispyDoom, doom2Iwad, new List<Pwad> { scythe });
             }
         }
     }

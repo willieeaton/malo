@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:malo"
         mc:Ignorable="d"
-        Title="MALO Main Window" Height="450" Width="800">
-    <Grid>
+        WindowStartupLocation="CenterScreen"
+        Title="MALO Main Window" Height="700" Width="500">
+    <StackPanel Margin="8">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">
+            Hello!
+        </TextBlock>
 
-    </Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="12">
+            Executable
+        </TextBlock>
+        
+        <ListBox HorizontalAlignment="Center">
+            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+        </ListBox>
+
+        <TextBlock HorizontalAlignment="Center"  FontSize="12">
+            Game
+        </TextBlock>
+
+        <ListBox HorizontalAlignment="Center">
+            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+        </ListBox>
+        
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12">
+            Level Pack
+        </TextBlock>
+
+        <ListBox HorizontalAlignment="Center">
+            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+        </ListBox>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12">
+            Gameplay Mods
+        </TextBlock>
+        
+        <ListBox HorizontalAlignment="Center">
+            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+        </ListBox>
+
+        <Button Name="btnRefresh" MouseUp="btnRefresh_MouseUp">
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.Content>Refresh Data</Button.Content>
+        </Button>
+
+        <Button Name="btnLaunch" MouseUp="btnLaunch_MouseUp">
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.Content>Launch</Button.Content>
+        </Button>
+    </StackPanel>
 </Window>

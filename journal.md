@@ -60,6 +60,12 @@
 * Continued to expand defintion of entity classes over last week
 * Program now launches the chosen executable with chosen game and levels!
 
+###Week 7
+
+### April 24, 2020
+* Returned from health-related break
+* Began to implement a basic version of the launch page
+
 # TODO
 
 ### Week 2

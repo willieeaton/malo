@@ -33,5 +33,15 @@ namespace malo
 
             var dummyTable = new EstablishDummyData();
         }
+
+        private void btnLaunch_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            //new CommandLine(sourcePort, iwad, pwads);
+        }
+
+        private void btnRefresh_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
