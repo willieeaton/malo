@@ -111,5 +111,11 @@ namespace malo
             //new CommandLine(sourcePort, iwad, pwads);
 
         }
+
+        private void btnAddFile_Click(object sender, RoutedEventArgs e)
+        {
+            AddFileWindow addFileWindow = new AddFileWindow();
+            addFileWindow.Show();
+        }
     }
 }

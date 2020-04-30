@@ -10,6 +10,8 @@ namespace malo.Data
 {
     static class Repository
     {
+        // static class for general functions that access the database 
+
         static public List<Iwad> GetIwads()
         {
             var iwads = new List<Iwad>();

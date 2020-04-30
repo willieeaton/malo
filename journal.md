@@ -65,6 +65,17 @@
 ### April 24, 2020
 * Returned from health-related break
 * Began to implement a basic version of the launch page
+* Wired up the WPF form to the database!!
+
+###Week 8
+
+### April 28, 2020
+* Added extensive comments explaining Doom engine/community jargon used in the game and various functions.
+
+### April 29, 2020
+* Added comments to functions in Data namespace
+* Created "Add File" window (not yet functional)
+
 
 # TODO
 
@@ -74,7 +85,8 @@
 - [x] (:heavy_check_mark: Mar. 23) *Find and complete basic WPF UI tutorial*
 
 ### Week 3
-- [ ] Create (placeholder/skeleton) interface
+- [x] (:heavy_check_mar: Apr. 24) Create (placeholder/skeleton) interface
+
 ##### From Project Plan milestones: 
 - [ ] Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.
 	* - [x] (:heavy_check_mark: During Week 3) Create basic parent class for game data files

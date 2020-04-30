@@ -6,6 +6,7 @@ namespace malo.Models
 {
     public class Tag
     {
+        // MALO uses a system of user-defined "Tags" to allow players to group and search for their files.
         public Tag()
         {
             PwadTags = new List<PwadTag>();
