@@ -32,7 +32,7 @@
             Level Pack
         </TextBlock>
 
-        <ListBox Name="lbLevelPwads" HorizontalAlignment="Center">
+        <ListBox Name="lbLevelPwads" HorizontalAlignment="Center" SelectionMode="Extended">
             <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
         </ListBox>
 
@@ -40,7 +40,7 @@
             Gameplay Mods
         </TextBlock>
 
-        <ListBox Name="lbModPwads" HorizontalAlignment="Center">
+        <ListBox Name="lbModPwads" HorizontalAlignment="Center" SelectionMode="Extended">
             <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
         </ListBox>
 

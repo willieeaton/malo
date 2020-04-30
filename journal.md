@@ -75,6 +75,7 @@
 ### April 29, 2020
 * Added comments to functions in Data namespace
 * Created "Add File" window (not yet functional)
+* "Launch Game" button now works from inside GUI, allowing user selection of game, executable, and mods!
 
 
 # TODO

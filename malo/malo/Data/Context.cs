@@ -21,10 +21,6 @@ namespace malo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Iwad>().ToTable("Iwads");
-            //modelBuilder.Entity<Pwad>().ToTable("Pwads");
-            //modelBuilder.Entity<SourcePort>().ToTable("SourcePorts");
-            //modelBuilder.Entity<Tag>().ToTable("Tags");
             modelBuilder.Entity<PwadTag>()
                 .HasKey(pt => new { pt.PwadId, pt.TagId });
             modelBuilder.Entity<PwadTag>()
@@ -35,11 +31,6 @@ namespace malo.Data
                 .HasOne(pt => pt.Tag)
                 .WithMany(t => t.PwadTags)
                 .HasForeignKey(pt => pt.TagId);
-            //modelBuilder.Entity<PwadTag>().ToTable("PwadTags");
-
-            //note to self: commented-out code was stuff i was
-            //trying while I couldn't get the Sqlite db to 
-            //connect.  
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

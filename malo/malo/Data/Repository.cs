@@ -75,5 +75,74 @@ namespace malo.Data
 
             return pwads;
         }
+
+        static public SourcePort FindSourcePortByName(string sourcePortName)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var outputSourcePort = context.SourcePorts.First<SourcePort>(s => s.Name == sourcePortName);
+
+                    return outputSourcePort;
+                }
+                catch
+                {
+                    return new SourcePort() { FileName = "MALOERROR" } ;
+                }
+            }
+
+        }
+
+        static public Iwad FindIwadByName(string iwadName)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var outputIwad = context.Iwads.First<Iwad>(i => i.Name == iwadName);
+
+                    return outputIwad;
+                }
+                catch
+                {
+                    return new Iwad() { FileName = "MALOERROR" };
+                }
+            }
+
+        }
+
+        static public Pwad FindPwadByName(string pwadName)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var outputPwad = context.Pwads.First<Pwad>(s => s.Name == pwadName);
+
+                    return outputPwad;
+                }
+                catch
+                {
+                    return new Pwad() { FileName = "MALOERROR" };
+                }
+            }
+
+        }
     }
 }
