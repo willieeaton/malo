@@ -84,7 +84,8 @@
 ###Week 9
 
 ### May 3, 2020
-* Created "Options" page for adding each type of file.
+* Created "Options" page for adding each type of file.  Not too advanced yet.
+* Implemented on-load data refresh event.
 
 # TODO
 

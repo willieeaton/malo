@@ -37,14 +37,82 @@ namespace malo
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            RefreshData();
+        }
+
+        private void btnLaunch_Click(object sender, RoutedEventArgs e)
+        {
+            var sourcePortSelected = lbSourcePorts.SelectedItem.ToString();
+            var sourcePort = Repository.FindSourcePortByName(sourcePortSelected);
+
+            var iwadSelected = lbIwads.SelectedItem.ToString();
+            var iwad = Repository.FindIwadByName(iwadSelected);
+
+            var pwads = new List<Pwad>();
+
+            foreach (var p in lbLevelPwads.SelectedItems)
+            {
+                var pwadSelected = p.ToString();
+
+                var pwadToAdd = Repository.FindPwadByName(pwadSelected);
+                if (pwadToAdd.FileName != "MALOERROR")
+                {
+                    pwads.Add(pwadToAdd);
+                }
+                else
+                {
+                    // dialog box here about a missing file; still allow running the rest
+                }
+
+            }
+
+            foreach (var p in lbModPwads.SelectedItems)
+            {
+                var pwadSelected = p.ToString();
+
+                var pwadToAdd = Repository.FindPwadByName(pwadSelected);
+                if (pwadToAdd.FileName != "MALOERROR")
+                {
+                    pwads.Add(pwadToAdd);
+                }
+                else
+                {
+                    // dialog box here about a missing file; still allow running the rest
+                }
+
+            }
+
+            if (sourcePort.FileName == "MALOERROR" || iwad.FileName == "MALOERROR")
+            {
+                // dialog box here; fail to run
+            }
+            else
+            {
+                new CommandLine(sourcePort, iwad, pwads);
+            }
+        }
+
+        private void btnAddFile_Click(object sender, RoutedEventArgs e)
+        {
+            AddFileWindow addFileWindow = new AddFileWindow();
+            addFileWindow.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
             List<String> iwads = new List<String>();
             var iwadsInTable = Repository.GetIwads();
-            foreach(var i in iwadsInTable)
+            foreach (var i in iwadsInTable)
             {
                 iwads.Add(i.Name);
             }
 
-            while(lbIwads.Items.Count > 0)
+            while (lbIwads.Items.Count > 0)
             {
                 lbIwads.Items.RemoveAt(0);
             }
@@ -104,64 +172,6 @@ namespace malo
             {
                 lbModPwads.Items.Add(p);
             }
-        }
-
-        private void btnLaunch_Click(object sender, RoutedEventArgs e)
-        {
-            var sourcePortSelected = lbSourcePorts.SelectedItem.ToString();
-            var sourcePort = Repository.FindSourcePortByName(sourcePortSelected);
-
-            var iwadSelected = lbIwads.SelectedItem.ToString();
-            var iwad = Repository.FindIwadByName(iwadSelected);
-
-            var pwads = new List<Pwad>();
-
-            foreach (var p in lbLevelPwads.SelectedItems)
-            {
-                var pwadSelected = p.ToString();
-
-                var pwadToAdd = Repository.FindPwadByName(pwadSelected);
-                if (pwadToAdd.FileName != "MALOERROR")
-                {
-                    pwads.Add(pwadToAdd);
-                }
-                else
-                {
-                    // dialog box here about a missing file; still allow running the rest
-                }
-
-            }
-
-            foreach (var p in lbModPwads.SelectedItems)
-            {
-                var pwadSelected = p.ToString();
-
-                var pwadToAdd = Repository.FindPwadByName(pwadSelected);
-                if (pwadToAdd.FileName != "MALOERROR")
-                {
-                    pwads.Add(pwadToAdd);
-                }
-                else
-                {
-                    // dialog box here about a missing file; still allow running the rest
-                }
-
-            }
-
-            if (sourcePort.FileName == "MALOERROR" || iwad.FileName == "MALOERROR")
-            {
-                // dialog box here; fail to run
-            }
-            else
-            {
-                new CommandLine(sourcePort, iwad, pwads);
-            }
-        }
-
-        private void btnAddFile_Click(object sender, RoutedEventArgs e)
-        {
-            AddFileWindow addFileWindow = new AddFileWindow();
-            addFileWindow.Show();
         }
     }
 }

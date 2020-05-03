@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:malo"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        Loaded ="Window_Loaded"
         Title="MALO Main Window" Height="700" Width="500">
     <StackPanel Margin="12">
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">

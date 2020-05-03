@@ -34,7 +34,13 @@ namespace malo.AddFilePages
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
 
-            openFileDialog.ShowDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                NavigationService.Navigate(new IwadOptions(new Iwad()
+                {
+                    FileLocation = openFileDialog.FileName
+                }));
+            }
         }
 
         private void btnPwad_Click(object sender, RoutedEventArgs e)
@@ -62,7 +68,13 @@ namespace malo.AddFilePages
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
 
-            openFileDialog.ShowDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                NavigationService.Navigate(new SourcePortOptions(new SourcePort()
+                {
+                    FileLocation = openFileDialog.FileName
+                }));
+            }
         }
     }
 }
