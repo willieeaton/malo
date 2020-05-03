@@ -7,11 +7,35 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddFilePages\IwadOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddFilePages\PwadOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddFilePages\SelectFileType.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddFilePages\SourcePortOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddFileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddFilePages\IwadOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddFilePages\PwadOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddFilePages\SelectFileType.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddFilePages\SourcePortOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddFileWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

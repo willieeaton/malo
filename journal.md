@@ -77,6 +77,14 @@
 * Created "Add File" window (not yet functional)
 * "Launch Game" button now works from inside GUI, allowing user selection of game, executable, and mods!
 
+### May 1, 2020
+* Moved "Add File" window functionality to a navigation frame with multiple sub-pages
+* Implemented OpenFileDialog!  It doesn't yet add data yet, that's next.  Need to implement "options" pages for each file type.
+
+###Week 9
+
+### May 3, 2020
+* Created "Options" page for adding each type of file.
 
 # TODO
 
@@ -91,7 +99,7 @@
 ##### From Project Plan milestones: 
 - [ ] Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.
 	* - [x] (:heavy_check_mark: During Week 3) Create basic parent class for game data files
-	* - [ ] Implement "Open file" dialog
+	* - [x] (:heavy_check_mark: May 1) Implement "Open file" dialog
 	* - [x] (:heavy_check_mark: During Week 3) Implement very basic elements of database (filename, location, identity)
 
 ### Week 4
@@ -110,4 +118,22 @@
 ##### From Project Plan milestones: 
 - [ ] Design modern WPF GUI interface for ease of use and improved appearance.
 
+# UPDATED TODO:
+
+### Week 9:
+### Sunday:
+- [ ] Implement user file addition to database.
+- [ ] Implement user file deletion from database.
+- [ ] Implement other user file modification
+
+### Monday:
+- [ ] Implement tagging system
+- [ ] Implement searching system
+- [ ] Implement IWAD/Source Port recognition.
+	* - [ ] Build databases for common IWADs and Source Ports
+	* - [ ] Build functions to check user input against these and automatically recognize them.
+
+### Tuesday:
+- [ ] Implement "Initial Install" mode (blank DB populated with above table)
+- [ ] GUI beautification
 

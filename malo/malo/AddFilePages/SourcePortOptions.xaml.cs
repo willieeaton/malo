@@ -1,4 +1,4 @@
-﻿using malo.AddFilePages;
+﻿using malo.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,21 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace malo
+namespace malo.AddFilePages
 {
     /// <summary>
-    /// Interaction logic for AddFileWindow.xaml
+    /// Interaction logic for SourcePortOptions.xaml
     /// </summary>
-    public partial class AddFileWindow : Window
+    public partial class SourcePortOptions : Page
     {
-        public AddFileWindow()
+        public SourcePortOptions(SourcePort sourcePort)
         {
             InitializeComponent();
-
-            frameAddFile.Navigate(new SelectFileType());
         }
-
     }
 }
