@@ -31,13 +31,15 @@ namespace malo
         {
             InitializeComponent();
 
-            var dummyTable = new EstablishDummyData();
+            //var dummyTable = new EstablishDummyData();
         }
 
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
             RefreshData();
+
+            //new EstablishDummyData();
         }
 
         private void btnLaunch_Click(object sender, RoutedEventArgs e)
@@ -95,7 +97,13 @@ namespace malo
         private void btnAddFile_Click(object sender, RoutedEventArgs e)
         {
             AddFileWindow addFileWindow = new AddFileWindow();
+            addFileWindow.Closed += AddFileWindowClosed; // adds an event for when the window closes
             addFileWindow.Show();
+        }
+        
+        public void AddFileWindowClosed(object sender, System.EventArgs e)
+        {
+            RefreshData();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -103,7 +111,7 @@ namespace malo
             RefreshData();
         }
 
-        private void RefreshData()
+        public void RefreshData()
         {
             List<String> iwads = new List<String>();
             var iwadsInTable = Repository.GetIwads();

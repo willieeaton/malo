@@ -24,6 +24,5 @@ namespace malo
 
             frameAddFile.Navigate(new SelectFileType());
         }
-
     }
 }

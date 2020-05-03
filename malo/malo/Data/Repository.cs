@@ -144,5 +144,42 @@ namespace malo.Data
             }
 
         }
+
+        static public bool CheckIfPwadExistsByFileLocation(Pwad pwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                return (context.Pwads.Any<Pwad>(p => p.FileLocation == pwad.FileLocation)); // returns true if file location match found; false if not.
+            }
+        }
+
+        static public bool AddNewPwad(Pwad pwad)
+        {
+            pwad.Completion = CompletionLevel.NotStarted;
+
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    context.Pwads.Add(pwad);
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

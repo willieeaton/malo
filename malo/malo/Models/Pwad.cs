@@ -20,6 +20,7 @@ namespace malo.Models
         Abandoned,
         Completed
     }
+
     public class Pwad : GameFile
     {
         // The Doom engine (IDTech1) contains the code to run the game, but the actual assets are contained in "WAD" files.
@@ -39,6 +40,9 @@ namespace malo.Models
         public Compatibility? RequiredCompatibility { get; set; }
         public CompletionLevel? Completion { get; set; }
         public ICollection<PwadTag> PwadTags { get; set; } // many-to-many
+
+        public bool IsAMod { get; set; }
+        public bool IsALevelPack { get; set; }
 
     }
 }

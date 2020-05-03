@@ -86,6 +86,7 @@
 ### May 3, 2020
 * Created "Options" page for adding each type of file.  Not too advanced yet.
 * Implemented on-load data refresh event.
+* User can now add PWAD files to database from inside program!  Starting to become a real launcher.
 
 # TODO
 
@@ -123,7 +124,7 @@
 
 ### Week 9:
 ### Sunday:
-- [ ] Implement user file addition to database.
+- [x] Implement user file addition to database.
 - [ ] Implement user file deletion from database.
 - [ ] Implement other user file modification
 

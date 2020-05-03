@@ -53,10 +53,13 @@ namespace malo.AddFilePages
 
             if (openFileDialog.ShowDialog() == true)
             {
-                NavigationService.Navigate(new PwadOptions(new Pwad()
+                var newPwad = new Pwad()
                 {
                     FileLocation = openFileDialog.FileName
-                }));
+                };
+                var pwadOptions = new PwadOptions(newPwad);
+
+                NavigationService.Navigate(pwadOptions, newPwad);
             }
         }
 
