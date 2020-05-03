@@ -158,6 +158,19 @@ namespace malo.Data
             }
         }
 
+        static public bool CheckIfIwadExistsByFileLocation(Iwad iwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                return (context.Iwads.Any<Iwad>(i => i.FileLocation == iwad.FileLocation)); // returns true if file location match found; false if not.
+            }
+        }
+
         static public bool AddNewPwad(Pwad pwad)
         {
             pwad.Completion = CompletionLevel.NotStarted;
@@ -172,6 +185,28 @@ namespace malo.Data
                 try
                 {
                     context.Pwads.Add(pwad);
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        static public bool AddNewIwad(Iwad iwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    context.Iwads.Add(iwad);
                     context.SaveChanges();
                 }
                 catch (Exception)

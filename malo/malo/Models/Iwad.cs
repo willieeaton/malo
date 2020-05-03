@@ -18,5 +18,31 @@ namespace malo.Models
         public string VersionName { get; set; }
         public bool IsConfigured { get; set; }
         public string DescriptiveName { get; set; }
+
+        static public string LookupIwadByFilename(string filename)
+        {
+            //This is just a test/placeholder for the actual database-lookup-based function that will go here later.
+            if(filename == "doom.wad")
+            {
+                return "Ultimate Doom";
+            }
+            else if(filename == "doom1.wad")
+            {
+                return "Shareware Doom";
+            }
+            else if(filename == "doom2.wad")
+            {
+                return "Doom II";
+            }
+            else if(filename == "heretic.wad")
+            {
+                return "Heretic";
+            }
+            else if(filename == "hexen.wad")
+            {
+                return "Hexen";
+            }
+            return "";
+        }
     }
 }
