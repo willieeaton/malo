@@ -103,7 +103,7 @@ namespace malo.AddFilePages
                 MessageBox.Show("Unable to add file: Name cannot be blank.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 //file must have a unique name
             }
-            else if(chkIsALevelPack.IsChecked == false && chkIsALevelPack.IsChecked == false)
+            else if(chkIsALevelPack.IsChecked == false && chkIsAMod.IsChecked == false)
             {
                 MessageBox.Show("Unable to add file: PWAD must contain some levels or be a mod!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 //file must contain levels or be a gameplay mod

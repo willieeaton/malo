@@ -54,7 +54,7 @@ namespace malo.Data
             optionsBuilder.UseSqlite(databaseLocation);
             using (Context context = new Context(optionsBuilder.Options))
             {
-                pwads.AddRange(context.Pwads.ToList<Pwad>());
+                pwads.AddRange(context.Pwads.Where(p => p.IsALevelPack == true).ToList<Pwad>());
             }
 
             return pwads;
@@ -70,7 +70,7 @@ namespace malo.Data
             optionsBuilder.UseSqlite(databaseLocation);
             using (Context context = new Context(optionsBuilder.Options))
             {
-                pwads.AddRange(context.Pwads.ToList<Pwad>());
+                pwads.AddRange(context.Pwads.Where(p => p.IsAMod == true).ToList<Pwad>());
             }
 
             return pwads;
@@ -171,6 +171,19 @@ namespace malo.Data
             }
         }
 
+        static public bool CheckIfSourcePortExistsByFileLocation(SourcePort sourcePort)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                return (context.SourcePorts.Any<SourcePort>(s => s.FileLocation == sourcePort.FileLocation)); // returns true if file location match found; false if not.
+            }
+        }
+
         static public bool AddNewPwad(Pwad pwad)
         {
             pwad.Completion = CompletionLevel.NotStarted;
@@ -197,6 +210,8 @@ namespace malo.Data
 
         static public bool AddNewIwad(Iwad iwad)
         {
+            iwad.IsConfigured = true;
+
             var optionsBuilder = new DbContextOptionsBuilder<Context>();
             string databaseLocation = "Data Source=";
             databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
@@ -207,6 +222,30 @@ namespace malo.Data
                 try
                 {
                     context.Iwads.Add(iwad);
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        static public bool AddNewSourcePort(SourcePort sourcePort)
+        {
+            sourcePort.IsConfigured = true;
+
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    context.SourcePorts.Add(sourcePort);
                     context.SaveChanges();
                 }
                 catch (Exception)
