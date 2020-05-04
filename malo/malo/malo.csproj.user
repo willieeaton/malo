@@ -22,6 +22,15 @@
     <Compile Update="AddFileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ModifyFilePages\ModifySourcePort.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ModifyFilePages\SelectFileToModify.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ModifyFileWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddFilePages\IwadOptions.xaml">
@@ -40,6 +49,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifyFilePages\ModifySourcePort.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifyFilePages\SelectFileToModify.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifyFileWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

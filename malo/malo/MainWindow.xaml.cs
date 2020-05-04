@@ -181,5 +181,20 @@ namespace malo
                 lbModPwads.Items.Add(p);
             }
         }
+
+        private void btnModifyFile_Click(object sender, RoutedEventArgs e)
+        {
+            ModifyFileWindow modifyFileWindow = new ModifyFileWindow();
+            modifyFileWindow.Closed += ModifyFileWindowClosed; // adds an event for when the window closes
+            modifyFileWindow.Show();
+        }
+
+        public void ModifyFileWindowClosed(object sender, System.EventArgs e)
+        {
+            RefreshData();
+        }
+
+
     }
 }
+

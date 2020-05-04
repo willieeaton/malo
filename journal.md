@@ -87,6 +87,7 @@
 * Created "Options" page for adding each type of file.  Not too advanced yet.
 * Implemented on-load data refresh event.
 * User can now add PWAD files to database from inside program!  Starting to become a real launcher.
+* And now IWAD and Executables too!
 
 # TODO
 

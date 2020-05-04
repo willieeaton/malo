@@ -255,5 +255,32 @@ namespace malo.Data
             }
             return true;
         }
+
+        static public bool ModifySourcePort(SourcePort sourcePort)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try 
+                {
+                    var sourcePortToUpdate = context.SourcePorts.First(s => s.FileName == sourcePort.FileName);
+                    sourcePortToUpdate.Name = sourcePort.Name;
+                    sourcePortToUpdate.MaximumCompatibility = sourcePort.MaximumCompatibility;
+                    context.SourcePorts.Update(sourcePortToUpdate);
+                    context.SaveChanges();
+                }
+                catch 
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
     }
 }
