@@ -93,7 +93,7 @@ namespace malo.Data
                 }
                 catch
                 {
-                    return new SourcePort() { FileName = "MALOERROR" } ;
+                    return new SourcePort() { FileName = "MALOERROR" };
                 }
             }
 
@@ -265,7 +265,7 @@ namespace malo.Data
             optionsBuilder.UseSqlite(databaseLocation);
             using (Context context = new Context(optionsBuilder.Options))
             {
-                try 
+                try
                 {
                     var sourcePortToUpdate = context.SourcePorts.First(s => s.FileName == sourcePort.FileName);
                     sourcePortToUpdate.Name = sourcePort.Name;
@@ -273,7 +273,82 @@ namespace malo.Data
                     context.SourcePorts.Update(sourcePortToUpdate);
                     context.SaveChanges();
                 }
-                catch 
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
+        static public bool DeleteSourcePortByName(SourcePort sourcePort)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var sourcePortToUpdate = context.SourcePorts.First(s => s.FileName == sourcePort.FileName);
+                    context.SourcePorts.Remove(sourcePortToUpdate);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
+
+        static public bool ModifyIwad(Iwad iwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var iwadToUpdate = context.Iwads.First(i => i.FileName == iwad.FileName);
+                    iwadToUpdate.Name = iwad.Name;
+                    context.Iwads.Update(iwadToUpdate);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
+
+        static public bool DeleteIwadByName(Iwad iwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var iwadToUpdate = context.Iwads.First(i => i.FileName == iwad.FileName);
+                    context.Iwads.Remove(iwadToUpdate);
+                    context.SaveChanges();
+                }
+                catch
                 {
                     return false;
                 }

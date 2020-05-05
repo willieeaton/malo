@@ -90,5 +90,24 @@ namespace malo.ModifyFilePages
                 tbSourcePortName.Text = sourcePortInProgress.Name;
             }
         }
+
+        private void btnDeleteFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Are you sure you want to delete {sourcePortInProgress.Name}?", "Delete File?", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                if (Repository.DeleteSourcePortByName(sourcePortInProgress))
+                {
+                    MessageBox.Show("File successfully deleted!", "Success!");
+
+                    Window.GetWindow(this).Close();
+
+                }
+
+                else
+                {
+                    MessageBox.Show($"Unable to delete file", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }

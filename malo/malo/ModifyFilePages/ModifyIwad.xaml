@@ -1,13 +1,12 @@
-﻿<Page x:Class="malo.ModifyFilePages.ModifySourcePort"
+﻿<Page x:Class="malo.ModifyFilePages.ModifyIwad"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:malo.ModifyFilePages"
       mc:Ignorable="d" 
-      Loaded="Page_Loaded"
       d:DesignHeight="600" d:DesignWidth="480"
-      Title="ModifySourcePort">
+      Title="ModifyIwad">
 
     <Grid>
         <StackPanel>
@@ -38,7 +37,7 @@
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <TextBlock>Source Port Name</TextBlock>
-                <TextBox Name="tbSourcePortName" Grid.Column="1"></TextBox>
+                <TextBox Name="tbIwadName" Grid.Column="1"></TextBox>
             </Grid>
 
             <Grid Margin="24 8 24 0">
@@ -47,10 +46,6 @@
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock>Compatibility Level</TextBlock>
-                <ComboBox Name="cbCompatibility" Grid.Column="1">
-                    <ComboBoxItem>Unknown</ComboBoxItem>
-                </ComboBox>
             </Grid>
 
             <Button Name="btnSaveChanges" Click="btnSaveChanges_Click" Margin="0, 16, 0, 0">

@@ -89,6 +89,11 @@
 * User can now add PWAD files to database from inside program!  Starting to become a real launcher.
 * And now IWAD and Executables too!
 
+### May 4, 2020
+* Created "Modify files" page
+
+### May 5, 2020
+
 # TODO
 
 ### Week 2
