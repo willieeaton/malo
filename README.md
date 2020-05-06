@@ -33,6 +33,33 @@ and levels into command-line parameters to pass to the source port executable.
   * Save configurations of combinations of the above
   * Include checkboxes for easy selection of common command-line parameters (e.g. -complevel for PRBoom+)
   * Search and sort levels & mods for user-generated tags
+  
+## Usage notes for project reviewers:
+The Doom Engine is open source and has been made available on multiple platforms thanks to the efforts of
+"source ports" made by the community.  These ports allow you to play the game with some modern features.
+In order to test the launcher functionality, I recommend downloading GZDoom, one of the most-compatible
+source port executables.  
+
+https://zdoom.org/downloads 
+
+In addition, the actual game's assets are NOT freely available.  The program will require an IWAD to run
+(called "Game File" in MALO).  Fortnunately, a project called FreeDoom has emerged to make an open-source
+set of assets that are broadly compatible with major Doom mods.  The FreeDoom IWAD files are available at
+the URL below.  "FreeDoom2.WAD" will be the one compatible with most mods, as Doom 2 was more popular to modify
+and map for than the original game.
+
+https://freedoom.github.io/download.html
+
+While you need a source port and an executable to use the launcher section of MALO, PWADS (mods and user-made
+levels) are optional.  They are usually made available for free by their makers at the IdGames archive.  Some
+of my favorite freely-available level sets for Doom are:
+
+https://www.doomworld.com/idgames/levels/doom2/megawads/scythe Scythe
+https://www.doomworld.com/idgames/levels/doom2/Ports/megawads/aaliens Ancient Aliens
+
+Thanks for reviewing my program!  I intend to continue developing it on my own after the class ends, as I am not
+satisfied with the interface or feature set yet and I want to make it excellent for my own use and for the broader
+Doom community's!
 
 ## Milestone Plan
 1. (Week 3) Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.

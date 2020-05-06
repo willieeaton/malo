@@ -116,7 +116,7 @@
 	
 ### Week 5
 ##### From Project Plan milestones: 
-- [ ] Implement tag system, searching, and sorting.
+- [x] (:heavy_check_mark: May 5) Implement tag system, searching, and sorting.
 	
 ### Week 6
 ##### From Project Plan milestones: 
@@ -136,7 +136,7 @@
 
 ### Monday:
 - [X] Implement tagging system
-- [ ] Implement searching system
+- [x] Implement searching system
 - [ ] Implement IWAD/Source Port recognition.
 	* - [ ] Build databases for common IWADs and Source Ports
 	* - [ ] Build functions to check user input against these and automatically recognize them.

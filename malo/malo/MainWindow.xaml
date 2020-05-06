@@ -33,6 +33,10 @@
             Level Pack
         </TextBlock>
 
+        <ComboBox Name="cbLevelPwadTags" SelectionChanged="cbLevelPwadTags_SelectionChanged">
+            <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
+        </ComboBox>
+        
         <ListBox Name="lbLevelPwads" HorizontalAlignment="Center" SelectionMode="Extended">
             <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
         </ListBox>
@@ -40,6 +44,9 @@
         <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
             Gameplay Mods
         </TextBlock>
+        <ComboBox Name="cbModPwadTags" SelectionChanged="cbModPwadTags_SelectionChanged">
+            <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
+        </ComboBox>
 
         <ListBox Name="lbModPwads" HorizontalAlignment="Center" SelectionMode="Extended">
             <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>

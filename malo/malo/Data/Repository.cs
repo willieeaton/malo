@@ -517,11 +517,17 @@ namespace malo.Data
             optionsBuilder.UseSqlite(databaseLocation);
             using (Context context = new Context(optionsBuilder.Options))
             {
-                var pwadInTable = context.Pwads.Include(p => p.PwadTags).First(p => p.Name == pwad.Name);
-                var tagInTable = context.Tags.First(t => t.Name == tag.Name);
+                try
+                {
+                    var pwadInTable = context.Pwads.Include(p => p.PwadTags).First(p => p.Name == pwad.Name);
+                    var tagInTable = context.Tags.First(t => t.Name == tag.Name);
 
-                return (pwadInTable.PwadTags.Any(pt => pt.Tag.Id == tagInTable.Id));
-
+                    return (pwadInTable.PwadTags.Any(pt => pt.Tag.Id == tagInTable.Id));
+                }
+                catch(Exception e)
+                {
+                    return false;
+                }
             }
         }
 
