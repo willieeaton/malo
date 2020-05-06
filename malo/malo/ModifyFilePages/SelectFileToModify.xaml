@@ -62,7 +62,7 @@
             </Button>
 
             <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
-            Level Pack
+            Tags
             </TextBlock>
 
             <ComboBox Name="cbTags">
@@ -70,7 +70,11 @@
             </ComboBox>
             <Button Margin="0, 0, 0, 0"  Name="btnModifyTag" Click="btnModifyTag_Click">
                 <Button.FontWeight>Bold</Button.FontWeight>
-                <Button.Content>Modify Tags</Button.Content>
+                <Button.Content>Modify Tag</Button.Content>
+            </Button>
+            <Button Margin="0, 0, 0, 0"  Name="btnAddTag" Click="btnAddTag_Click">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Add New Tag</Button.Content>
             </Button>
             <Button Margin="0, 24, 0, 0">
                 <Button.FontWeight>Bold</Button.FontWeight>

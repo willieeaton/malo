@@ -19,6 +19,9 @@
     <Compile Update="AddFilePages\SourcePortOptions.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AddFilePages\TagOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddFileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddFilePages\SourcePortOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddFilePages\TagOptions.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddFileWindow.xaml">

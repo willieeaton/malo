@@ -1,4 +1,5 @@
-﻿using malo.Data;
+﻿using malo.AddFilePages;
+using malo.Data;
 using malo.Models;
 using System;
 using System.Collections.Generic;
@@ -108,9 +109,9 @@ namespace malo.ModifyFilePages
                 cbTags.Items.RemoveAt(0);
             }
 
-            foreach (var p in modPwads)
+            foreach (var t in tags)
             {
-                lbModPwads.Items.Add(p);
+                cbTags.Items.Add(t);
             }
         }
 
@@ -164,6 +165,16 @@ namespace malo.ModifyFilePages
             var tagOptions = new ModifyTag(tag);
 
             NavigationService.Navigate(tagOptions, tag);
+
+        }
+
+        private void btnAddTag_Click(object sender, RoutedEventArgs e)
+        {
+            var newTag = new Tag();
+
+            var tagOptions = new TagOptions(newTag);
+
+            NavigationService.Navigate(tagOptions, newTag);
 
         }
     }

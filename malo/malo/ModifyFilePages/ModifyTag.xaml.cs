@@ -85,5 +85,66 @@ namespace malo.ModifyFilePages
             }
 
         }
+
+        private void btnRemoveTag_Click(object sender, RoutedEventArgs e)
+        {
+            var tagToMove = lbPwadsWithTag.SelectedItem.ToString();
+
+            lbPwadsWithTag.Items.RemoveAt(lbPwadsWithTag.SelectedIndex);
+            lbPwadsWithoutTag.Items.Add(tagToMove);
+        }
+
+        private void btnAddTagToFile_Click(object sender, RoutedEventArgs e)
+        {
+            var tagToMove = lbPwadsWithoutTag.SelectedItem.ToString();
+
+            lbPwadsWithoutTag.Items.RemoveAt(lbPwadsWithoutTag.SelectedIndex);
+            lbPwadsWithTag.Items.Add(tagToMove);
+        }
+
+        private void btnDeleteTag_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (MessageBox.Show($"Are you sure you want to delete {tagInProgress.Name}?", "Delete File?", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                if (Repository.DeleteTagByName(tagInProgress))
+                {
+                    MessageBox.Show("Tag successfully deleted!", "Success!");
+
+                    Window.GetWindow(this).Close();
+
+                }
+
+                else
+                {
+                    MessageBox.Show($"Unable to delete tag", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void btnAddTag_Click(object sender, RoutedEventArgs e)
+        {
+            tagInProgress.Description = tbDescription.Text;
+            var tagPwads = new List<Pwad>();
+
+            foreach(var i in lbPwadsWithTag.Items)
+            {
+                tagPwads.Add(new Pwad() { Name = i.ToString() });
+            }
+            if (CheckValidity())
+            {
+                if (Repository.ModifyTag(tagInProgress, tagPwads))
+                {
+                    MessageBox.Show($"{tagInProgress.Name} successfully modified.", "Success!");
+
+                    Window.GetWindow(this).Close();
+                }
+
+                else
+                {
+                    MessageBox.Show($"Unable to update file", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }

@@ -206,6 +206,18 @@ namespace malo.Data
                 return (context.SourcePorts.Any<SourcePort>(s => s.FileLocation == sourcePort.FileLocation)); // returns true if file location match found; false if not.
             }
         }
+        static public bool CheckIfTagExistsByName(Tag tag)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                return (context.Tags.Any<Tag>(t => t.Name == tag.Name)); // returns true if tag name match found; false if not.
+            }
+        }
 
         static public bool AddNewPwad(Pwad pwad)
         {
@@ -269,6 +281,27 @@ namespace malo.Data
                 try
                 {
                     context.SourcePorts.Add(sourcePort);
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        static public bool AddNewTag(Tag tag)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    context.Tags.Add(tag);
                     context.SaveChanges();
                 }
                 catch (Exception)
@@ -435,6 +468,30 @@ namespace malo.Data
             }
             return true;
         }
+        static public bool DeleteTagByName(Tag tag)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var tagToUpdate = context.Tags.First(t => t.Name == tag.Name);
+                    context.Tags.Remove(tagToUpdate);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
 
         static public List<Tag> GetTags()
         {
@@ -460,10 +517,63 @@ namespace malo.Data
             optionsBuilder.UseSqlite(databaseLocation);
             using (Context context = new Context(optionsBuilder.Options))
             {
+                var pwadInTable = context.Pwads.Include(p => p.PwadTags).First(p => p.Name == pwad.Name);
+                var tagInTable = context.Tags.First(t => t.Name == tag.Name);
+
+                return (pwadInTable.PwadTags.Any(pt => pt.Tag.Id == tagInTable.Id));
+
+            }
+        }
+
+        static public bool AddTagToPwad(Tag tag, Pwad pwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
                 var pwadInTable = context.Pwads.First(p => p.Name == pwad.Name);
                 var tagInTable = context.Tags.First(t => t.Name == tag.Name);
-                return (pwadInTable.PwadTags.Select(pt => pt.Tag.Name == tag.Name).Any());
+                PwadTag pwadTag = new PwadTag()
+                {
+                    Pwad = pwadInTable,
+                    Tag = tagInTable
+                };
 
+                pwadInTable.PwadTags.Add(pwadTag);
+                tagInTable.PwadTags.Add(pwadTag);
+
+                context.Pwads.Update(pwadInTable);
+                context.Tags.Update(tagInTable);
+                context.SaveChanges();
+            }
+
+            return true;
+        }
+
+        static public bool ModifyTag(Tag tag, List<Pwad> pwads)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                var tagInTable = context.Tags.Include(t => t.PwadTags).First(t => t.Name == tag.Name);
+                tagInTable.PwadTags.Clear();
+                tagInTable.Description = tag.Description;
+
+                foreach (Pwad p in pwads)
+                {
+                    tagInTable.PwadTags.Add(new PwadTag() { PwadId = p.Id, TagId = tagInTable.Id });
+                }
+                context.Tags.Update(tagInTable);
+                context.SaveChanges();
+
+                return true;
             }
         }
     }

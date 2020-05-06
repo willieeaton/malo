@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:malo.AddFilePages"
       mc:Ignorable="d" 
+      Loaded="Page_Loaded"
       d:DesignHeight="600" d:DesignWidth="480"
       Title="TagOptions">
 
@@ -41,6 +42,10 @@
                     <ListBoxItem>Loading...</ListBoxItem>
                 </ListBox>
             </Grid>
+            <Button Margin="0, 0, 0, 0" Name="btnRemoveTag" Click="btnRemoveTag_Click">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Remove Tag From File</Button.Content>
+            </Button>
 
             <Grid Margin="24 8 24 0">
                 <Grid.ColumnDefinitions>
@@ -52,6 +57,15 @@
                     <ListBoxItem>Loading...</ListBoxItem>
                 </ListBox>
             </Grid>
+            <Button Margin="0, 0, 0, 0" Name="btnAddTagToFile" Click="btnAddTagToFile_Click">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Tag File</Button.Content>
+            </Button>
+
+            <Button Name="btnAddTag" Click="btnAddTag_Click"  Margin="0, 16, 0, 0">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Save New Tag</Button.Content>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

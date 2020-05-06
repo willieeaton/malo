@@ -135,7 +135,7 @@
 - [x] Implement other user file modification
 
 ### Monday:
-- [ ] Implement tagging system
+- [X] Implement tagging system
 - [ ] Implement searching system
 - [ ] Implement IWAD/Source Port recognition.
 	* - [ ] Build databases for common IWADs and Source Ports

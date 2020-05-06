@@ -26,11 +26,13 @@ namespace malo.Data
             modelBuilder.Entity<PwadTag>()
                 .HasOne(pt => pt.Pwad)
                 .WithMany(p => p.PwadTags)
-                .HasForeignKey(pt => pt.PwadId);
+                .HasForeignKey(pt => pt.PwadId)
+                .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<PwadTag>()
                 .HasOne(pt => pt.Tag)
                 .WithMany(t => t.PwadTags)
-                .HasForeignKey(pt => pt.TagId);
+                .HasForeignKey(pt => pt.TagId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
