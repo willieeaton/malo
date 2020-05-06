@@ -22,7 +22,16 @@
     <Compile Update="AddFileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ModifyFilePages\ModifyIwad.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ModifyFilePages\ModifyPwad.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ModifyFilePages\ModifySourcePort.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ModifyFilePages\ModifyTag.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ModifyFilePages\SelectFileToModify.xaml.cs">
@@ -51,7 +60,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ModifyFilePages\ModifyIwad.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifyFilePages\ModifyPwad.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ModifyFilePages\ModifySourcePort.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifyFilePages\ModifyTag.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ModifyFilePages\SelectFileToModify.xaml">

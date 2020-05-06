@@ -31,7 +31,7 @@
                 <ListBoxItem>Loading...</ListBoxItem>
             </ListBox>
 
-            <Button Margin="0, 0, 0, 0">
+            <Button Margin="0, 0, 0, 0" Name = "btnModifyIwad" Click="btnModifyIwad_Click">
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Modify IWAD</Button.Content>
             </Button>
@@ -43,7 +43,7 @@
                 <ListBoxItem>Loading...</ListBoxItem>
             </ListBox>
 
-            <Button Margin="0, 0, 0, 0">
+            <Button Margin="0, 0, 0, 0" Name="btnModifyLevelPack" Click="btnModifyLevelPack_Click">
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Modify PWAD</Button.Content>
             </Button>
@@ -56,11 +56,22 @@
             </ListBox>
 
 
-            <Button Margin="0, 0, 0, 0">
+            <Button Margin="0, 0, 0, 0" Name="btnModifyMod" Click="btnModifyMod_Click">
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Modify PWAD</Button.Content>
             </Button>
 
+            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+            Level Pack
+            </TextBlock>
+
+            <ComboBox Name="cbTags">
+                <ComboBoxItem>Loading...</ComboBoxItem>
+            </ComboBox>
+            <Button Margin="0, 0, 0, 0"  Name="btnModifyTag" Click="btnModifyTag_Click">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Modify Tags</Button.Content>
+            </Button>
             <Button Margin="0, 24, 0, 0">
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Cancel</Button.Content>

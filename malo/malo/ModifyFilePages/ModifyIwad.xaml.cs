@@ -21,11 +21,12 @@ namespace malo.ModifyFilePages
     public partial class ModifyIwad : Page
     {
         static Iwad iwadInProgress = new Iwad();
+
         public ModifyIwad(Iwad iwad)
         {
-            InitializeComponent();
-
             iwadInProgress = iwad;
+
+            InitializeComponent();
         }
 
 

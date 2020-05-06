@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\lappy supreme\source\repos\malo\malo\malo\App.xaml
-10-957858099
+13813161109
 
-23-392322571
+26891286934
 216213097567
-AddFilePages\IwadOptions.xaml;AddFilePages\PwadOptions.xaml;AddFilePages\SelectFileType.xaml;AddFilePages\SourcePortOptions.xaml;AddFileWindow.xaml;MainWindow.xaml;ModifyFilePages\ModifyIwad.xaml;ModifyFilePages\ModifySourcePort.xaml;ModifyFilePages\SelectFileToModify.xaml;ModifyFileWindow.xaml;
+AddFilePages\IwadOptions.xaml;AddFilePages\PwadOptions.xaml;AddFilePages\SelectFileType.xaml;AddFilePages\SourcePortOptions.xaml;AddFilePages\TagOptions.xaml;AddFileWindow.xaml;MainWindow.xaml;ModifyFilePages\ModifyIwad.xaml;ModifyFilePages\ModifyPwad.xaml;ModifyFilePages\ModifySourcePort.xaml;ModifyFilePages\ModifyTag.xaml;ModifyFilePages\SelectFileToModify.xaml;ModifyFileWindow.xaml;
 
 False
 

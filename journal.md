@@ -105,7 +105,7 @@
 - [x] (:heavy_check_mar: Apr. 24) Create (placeholder/skeleton) interface
 
 ##### From Project Plan milestones: 
-- [ ] Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.
+- [x] Allow user to add, modify, and remove game data files, folders, source port executables, level packs, and game mods.
 	* - [x] (:heavy_check_mark: During Week 3) Create basic parent class for game data files
 	* - [x] (:heavy_check_mark: May 1) Implement "Open file" dialog
 	* - [x] (:heavy_check_mark: During Week 3) Implement very basic elements of database (filename, location, identity)
@@ -131,8 +131,8 @@
 ### Week 9:
 ### Sunday:
 - [x] Implement user file addition to database.
-- [ ] Implement user file deletion from database.
-- [ ] Implement other user file modification
+- [x] Implement user file deletion from database.
+- [x] Implement other user file modification
 
 ### Monday:
 - [ ] Implement tagging system

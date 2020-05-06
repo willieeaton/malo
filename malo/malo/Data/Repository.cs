@@ -145,6 +145,29 @@ namespace malo.Data
 
         }
 
+        static public Tag FindTagByName(string tagName)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var outputTag = context.Tags.First<Tag>(t => t.Name == tagName);
+
+                    return outputTag;
+                }
+                catch
+                {
+                    return new Tag() { Name = "MALOERROR" };
+                }
+            }
+
+        }
+
         static public bool CheckIfPwadExistsByFileLocation(Pwad pwad)
         {
             var optionsBuilder = new DbContextOptionsBuilder<Context>();
@@ -356,6 +379,92 @@ namespace malo.Data
 
             }
             return true;
+        }
+
+        static public bool ModifyPwad(Pwad pwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var pwadToUpdate = context.Pwads.First(p => p.FileName == pwad.FileName);
+                    pwadToUpdate.Name = pwad.Name;
+                    pwadToUpdate.IsAMod = pwad.IsAMod;
+                    pwadToUpdate.IsALevelPack = pwad.IsALevelPack;
+                    pwadToUpdate.RequiredCompatibility = pwad.RequiredCompatibility;
+
+                    context.Pwads.Update(pwadToUpdate);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
+
+        static public bool DeletePwadByName(Pwad pwad)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                try
+                {
+                    var pwadToUpdate = context.Pwads.First(p => p.FileName == pwad.FileName);
+                    context.Pwads.Remove(pwadToUpdate);
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+        }
+
+        static public List<Tag> GetTags()
+        {
+            var tags = new List<Tag>();
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                tags.AddRange(context.Tags.ToList<Tag>());
+            }
+            return tags;
+        }
+
+        static public bool CheckPwadForTag(Pwad pwad, Tag tag)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<Context>();
+            string databaseLocation = "Data Source=";
+            databaseLocation += System.AppDomain.CurrentDomain.BaseDirectory;
+            databaseLocation += "malo.db";
+            optionsBuilder.UseSqlite(databaseLocation);
+            using (Context context = new Context(optionsBuilder.Options))
+            {
+                var pwadInTable = context.Pwads.First(p => p.Name == pwad.Name);
+                var tagInTable = context.Tags.First(t => t.Name == tag.Name);
+                return (pwadInTable.PwadTags.Select(pt => pt.Tag.Name == tag.Name).Any());
+
+            }
         }
     }
 }

@@ -95,6 +95,23 @@ namespace malo.ModifyFilePages
             {
                 lbModPwads.Items.Add(p);
             }
+
+            List<String> tags = new List<String>();
+            var tagsInTable = Repository.GetTags();
+            foreach (var t in tagsInTable)
+            {
+                tags.Add(t.Name);
+            }
+
+            while (cbTags.Items.Count > 0)
+            {
+                cbTags.Items.RemoveAt(0);
+            }
+
+            foreach (var p in modPwads)
+            {
+                lbModPwads.Items.Add(p);
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -106,9 +123,47 @@ namespace malo.ModifyFilePages
         {
             var sourcePort = Repository.FindSourcePortByName(lbSourcePorts.SelectedItem.ToString());
 
-            var pwadOptions = new ModifySourcePort(sourcePort);
+            var sourcePortOptions = new ModifySourcePort(sourcePort);
 
-            NavigationService.Navigate(pwadOptions, sourcePort);
+            NavigationService.Navigate(sourcePortOptions, sourcePort);
+
+        }
+
+        private void btnModifyIwad_Click(object sender, RoutedEventArgs e)
+        {
+            var iwad = Repository.FindIwadByName(lbIwads.SelectedItem.ToString());
+
+            var iwadOptions = new ModifyIwad(iwad);
+
+            NavigationService.Navigate(iwadOptions, iwad);
+
+        }
+
+        private void btnModifyLevelPack_Click(object sender, RoutedEventArgs e)
+        {
+            var pwad = Repository.FindPwadByName(lbLevelPwads.SelectedItem.ToString());
+            
+            var pwadOptions = new ModifyPwad(pwad);
+
+            NavigationService.Navigate(pwadOptions, pwad);
+        }
+
+        private void btnModifyMod_Click(object sender, RoutedEventArgs e)
+        {
+            var pwad = Repository.FindPwadByName(lbModPwads.SelectedItem.ToString());
+
+            var pwadOptions = new ModifyPwad(pwad);
+
+            NavigationService.Navigate(pwadOptions, pwad);
+        }
+
+        private void btnModifyTag_Click(object sender, RoutedEventArgs e)
+        {
+            var tag = Repository.FindTagByName(cbTags.SelectedItem.ToString());
+
+            var tagOptions = new ModifyTag(tag);
+
+            NavigationService.Navigate(tagOptions, tag);
 
         }
     }
