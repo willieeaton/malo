@@ -1,5 +1,5 @@
 ﻿malo
-
+1.0.0.0
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\lappy supreme\source\repos\malo\malo\malo\App.xaml
 13813161109
 
-26891286934
+27-1665039451
 216213097567
 AddFilePages\IwadOptions.xaml;AddFilePages\PwadOptions.xaml;AddFilePages\SelectFileType.xaml;AddFilePages\SourcePortOptions.xaml;AddFilePages\TagOptions.xaml;AddFileWindow.xaml;MainWindow.xaml;ModifyFilePages\ModifyIwad.xaml;ModifyFilePages\ModifyPwad.xaml;ModifyFilePages\ModifySourcePort.xaml;ModifyFilePages\ModifyTag.xaml;ModifyFilePages\SelectFileToModify.xaml;ModifyFileWindow.xaml;
 

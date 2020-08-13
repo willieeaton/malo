@@ -521,10 +521,9 @@ namespace malo.Data
                 {
                     var pwadInTable = context.Pwads.Include(p => p.PwadTags).First(p => p.Name == pwad.Name);
                     var tagInTable = context.Tags.First(t => t.Name == tag.Name);
-
-                    return (pwadInTable.PwadTags.Any(pt => pt.Tag.Id == tagInTable.Id));
+                    return (pwadInTable.PwadTags.Any(pt => pt.TagId == tagInTable.Id));
                 }
-                catch(Exception e)
+                catch (Exception)
                 {
                     return false;
                 }
