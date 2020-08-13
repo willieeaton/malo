@@ -571,7 +571,14 @@ namespace malo.Data
                 tagInTable.PwadTags.Clear();
                 tagInTable.Description = tag.Description;
 
+                var pwadsInTable = new List<Pwad>();
+
                 foreach (Pwad p in pwads)
+                {
+                    pwadsInTable.Add(context.Pwads.First(pp => pp.Name == p.Name));
+                }
+
+                foreach (Pwad p in pwadsInTable)
                 {
                     tagInTable.PwadTags.Add(new PwadTag() { PwadId = p.Id, TagId = tagInTable.Id });
                 }
