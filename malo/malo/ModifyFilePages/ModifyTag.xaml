@@ -10,65 +10,67 @@
       Title="ModifyTag">
 
     <Grid>
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
                 Tag information:
-            </TextBlock>
-            <Grid Margin="24 8 24 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock>Tag Name</TextBlock>
-                <TextBox Name="tbTagName" Grid.Column="1" IsReadOnly="true"></TextBox>
-            </Grid>
-            <Grid Margin="24 8 24 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
+                </TextBlock>
+                <Grid Margin="24 8 24 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock>Tag Name</TextBlock>
+                    <TextBox Name="tbTagName" Grid.Column="1" IsReadOnly="true"></TextBox>
+                </Grid>
+                <Grid Margin="24 8 24 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock>Description</TextBlock>
-                <TextBox Name="tbDescription" Grid.Column="1" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
-            </Grid>
-            <Grid Margin="24 8 24 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock>Files with this tag</TextBlock>
-                <ListBox Name="lbPwadsWithTag" Grid.Column="1">
-                    <ListBoxItem>Loading...</ListBoxItem>
-                </ListBox>
-            </Grid>
-            <Button Margin="0, 0, 0, 0" Name="btnRemoveTag" Click="btnRemoveTag_Click">
-                <Button.FontWeight>Bold</Button.FontWeight>
-                <Button.Content>Remove Tag From File</Button.Content>
-            </Button>
+                    <TextBlock>Description</TextBlock>
+                    <TextBox Name="tbDescription" Grid.Column="1" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                </Grid>
+                <Grid Margin="24 8 24 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock>Files with this tag</TextBlock>
+                    <ListBox Name="lbPwadsWithTag" Grid.Column="1">
+                        <ListBoxItem>Loading...</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Button Margin="0, 0, 0, 0" Name="btnRemoveTag" Click="btnRemoveTag_Click">
+                    <Button.FontWeight>Bold</Button.FontWeight>
+                    <Button.Content>Remove Tag From File</Button.Content>
+                </Button>
 
-            <Grid Margin="24 8 24 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock>Files without this tag</TextBlock>
-                <ListBox Name="lbPwadsWithoutTag" Grid.Column="1">
-                    <ListBoxItem>Loading...</ListBoxItem>
-                </ListBox>
-            </Grid>
-            <Button Margin="0, 0, 0, 0" Name="btnAddTagToFile" Click="btnAddTagToFile_Click">
-                <Button.FontWeight>Bold</Button.FontWeight>
-                <Button.Content>Tag File</Button.Content>
-            </Button>
+                <Grid Margin="24 8 24 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock>Files without this tag</TextBlock>
+                    <ListBox Name="lbPwadsWithoutTag" Grid.Column="1">
+                        <ListBoxItem>Loading...</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Button Margin="0, 0, 0, 0" Name="btnAddTagToFile" Click="btnAddTagToFile_Click">
+                    <Button.FontWeight>Bold</Button.FontWeight>
+                    <Button.Content>Tag File</Button.Content>
+                </Button>
 
-            <Button Name="btnAddTag" Click="btnAddTag_Click"  Margin="0, 16, 0, 0">
-                <Button.FontWeight>Bold</Button.FontWeight>
-                <Button.Content>Save Changes To Tag</Button.Content>
-            </Button>
-            <Button Name="btnDeleteTag" Click="btnDeleteTag_Click"  Margin="0, 0, 0, 0">
-                <Button.FontWeight>Bold</Button.FontWeight>
-                <Button.Content>Delete Tag</Button.Content>
-            </Button>
-        </StackPanel>
+                <Button Name="btnAddTag" Click="btnAddTag_Click"  Margin="0, 16, 0, 0">
+                    <Button.FontWeight>Bold</Button.FontWeight>
+                    <Button.Content>Save Changes To Tag</Button.Content>
+                </Button>
+                <Button Name="btnDeleteTag" Click="btnDeleteTag_Click"  Margin="0, 0, 0, 0">
+                    <Button.FontWeight>Bold</Button.FontWeight>
+                    <Button.Content>Delete Tag</Button.Content>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

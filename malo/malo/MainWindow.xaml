@@ -8,69 +8,71 @@
         WindowStartupLocation="CenterScreen"
         Loaded ="Window_Loaded"
         Title="MALO Main Window" Height="700" Width="500">
-    <StackPanel Margin="12">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="12">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">
             Hello!
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
             Executable
-        </TextBlock>
-        
-        <ListBox Name="lbSourcePorts" HorizontalAlignment="Center">
-            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
-        </ListBox>
+            </TextBlock>
 
-        <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+            <ListBox Name="lbSourcePorts" HorizontalAlignment="Center">
+                <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+            </ListBox>
+
+            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
             Game
-        </TextBlock>
+            </TextBlock>
 
-        <ListBox Name="lbIwads" HorizontalAlignment="Center">
-            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
-        </ListBox>
+            <ListBox Name="lbIwads" HorizontalAlignment="Center">
+                <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+            </ListBox>
 
-        <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
             Level Pack
-        </TextBlock>
+            </TextBlock>
 
-        <ComboBox Name="cbLevelPwadTags" SelectionChanged="cbLevelPwadTags_SelectionChanged">
-            <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
-        </ComboBox>
-        
-        <ListBox Name="lbLevelPwads" HorizontalAlignment="Center" SelectionMode="Extended">
-            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
-        </ListBox>
+            <ComboBox Name="cbLevelPwadTags" SelectionChanged="cbLevelPwadTags_SelectionChanged">
+                <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
+            </ComboBox>
 
-        <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
+            <ListBox Name="lbLevelPwads" HorizontalAlignment="Center" SelectionMode="Extended">
+                <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+            </ListBox>
+
+            <TextBlock HorizontalAlignment="Center" FontSize="12" Margin="0, 12, 0, 0">
             Gameplay Mods
-        </TextBlock>
-        <ComboBox Name="cbModPwadTags" SelectionChanged="cbModPwadTags_SelectionChanged">
-            <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
-        </ComboBox>
+            </TextBlock>
+            <ComboBox Name="cbModPwadTags" SelectionChanged="cbModPwadTags_SelectionChanged">
+                <ComboBoxItem>Click here to filter by user-defined tags</ComboBoxItem>
+            </ComboBox>
 
-        <ListBox Name="lbModPwads" HorizontalAlignment="Center" SelectionMode="Extended">
-            <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
-        </ListBox>
+            <ListBox Name="lbModPwads" HorizontalAlignment="Center" SelectionMode="Extended">
+                <ListBoxItem>Please Click "Refresh Data"</ListBoxItem>
+            </ListBox>
 
-        <Button Name="btnRefresh" Click="btnRefresh_Click" Margin="0, 24, 0, 0">
-            <Button.FontWeight>Bold</Button.FontWeight>
-            <Button.Content>Refresh Data</Button.Content>
-        </Button>
+            <Button Name="btnRefresh" Click="btnRefresh_Click" Margin="0, 24, 0, 0">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Refresh Data</Button.Content>
+            </Button>
 
-        <Button Name="btnAddFile" Click="btnAddFile_Click" Margin="0, 0, 0, 0">
-            <Button.FontWeight>Bold</Button.FontWeight>
-            <Button.Content>Add File To Database</Button.Content>
-        </Button>
-        
-        <Button Name="btnModifyFile" Click="btnModifyFile_Click">
-            <Button.FontWeight>Bold</Button.FontWeight>
-            <Button.Content>Modify Files in Database</Button.Content>
-        </Button>
-        
-        <Button Name="btnLaunch" Click="btnLaunch_Click" Margin="0, 0, 0, 0">
-            <Button.FontWeight>Bold</Button.FontWeight>
-            <Button.Content>Launch</Button.Content>
-        </Button>
+            <Button Name="btnAddFile" Click="btnAddFile_Click" Margin="0, 0, 0, 0">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Add File To Database</Button.Content>
+            </Button>
 
-    </StackPanel>
+            <Button Name="btnModifyFile" Click="btnModifyFile_Click">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Modify Files in Database</Button.Content>
+            </Button>
+
+            <Button Name="btnLaunch" Click="btnLaunch_Click" Margin="0, 0, 0, 0">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Launch</Button.Content>
+            </Button>
+
+        </StackPanel>
+    </ScrollViewer>
 </Window>
