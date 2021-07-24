@@ -52,6 +52,8 @@ namespace malo
 
             var pwads = new List<Pwad>();
 
+            var parameters = new string("");
+
             foreach (var p in lbLevelPwads.SelectedItems)
             {
                 var pwadSelected = p.ToString();
@@ -84,13 +86,15 @@ namespace malo
 
             }
 
+            parameters = tbAdditionalParameters.Text;
+
             if (sourcePort.FileName == "MALOERROR" || iwad.FileName == "MALOERROR")
             {
                 // dialog box here; fail to run
             }
             else
             {
-                new CommandLine(sourcePort, iwad, pwads);
+                new CommandLine(sourcePort, iwad, pwads, parameters);
             }
         }
 

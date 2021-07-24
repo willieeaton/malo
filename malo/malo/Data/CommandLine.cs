@@ -14,13 +14,15 @@ namespace malo.Data
         public SourcePort SourcePort { get; set; }
         public Iwad Iwad  { get; set; }
         public List<Pwad> Pwads { get; set; }
+        public string Parameters { get; set; }
         private string command;
 
-        public CommandLine(SourcePort sourcePort, Iwad iwad, List<Pwad> pwads)
+        public CommandLine(SourcePort sourcePort, Iwad iwad, List<Pwad> pwads, String parameters)
         {
             SourcePort = sourcePort;
             Iwad = iwad;
             Pwads = pwads;
+            Parameters = parameters;
             var launchGame = new ProcessStartInfo();
             launchGame.WorkingDirectory = sourcePort.FileFolder;
             launchGame.FileName = sourcePort.FileLocation;
@@ -40,6 +42,15 @@ namespace malo.Data
                 command = command.Remove(command.Length - 1); //just getting rid of that trailing space at the end
                 launchGame.Arguments += command;
             }
+
+            Debug.WriteLine($"Parameters: {Parameters}");
+
+            if (Parameters != "")
+            {
+                Parameters = " " + Parameters;
+                launchGame.Arguments += Parameters;
+            }    
+
             Debug.WriteLine(launchGame.Arguments);
             Process.Start(launchGame);
         }

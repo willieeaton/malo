@@ -67,7 +67,14 @@
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Modify Files in Database</Button.Content>
             </Button>
-
+            <Grid Margin="24 24 24 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock>(Optional) Parameters</TextBlock>
+                <TextBox Name="tbAdditionalParameters" Grid.Column="1" IsReadOnly="False"></TextBox>
+            </Grid>
             <Button Name="btnLaunch" Click="btnLaunch_Click" Margin="0, 0, 0, 0">
                 <Button.FontWeight>Bold</Button.FontWeight>
                 <Button.Content>Launch</Button.Content>
