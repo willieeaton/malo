@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\lappy supreme\source\repos\malo\malo\malo\obj\Debug\netcoreapp3.1\
+C:\Users\Icebrand\source\repos\malo\malo\malo\obj\Debug\netcoreapp3.1\
 malo
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\lappy supreme\source\repos\malo\malo\malo\App.xaml
-13813161109
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Icebrand\source\repos\malo\malo\malo\App.xaml
+13245977933
 
-27-1665039451
-216213097567
+27-1352919320
+216-956882486
 AddFilePages\IwadOptions.xaml;AddFilePages\PwadOptions.xaml;AddFilePages\SelectFileType.xaml;AddFilePages\SourcePortOptions.xaml;AddFilePages\TagOptions.xaml;AddFileWindow.xaml;MainWindow.xaml;ModifyFilePages\ModifyIwad.xaml;ModifyFilePages\ModifyPwad.xaml;ModifyFilePages\ModifySourcePort.xaml;ModifyFilePages\ModifyTag.xaml;ModifyFilePages\SelectFileToModify.xaml;ModifyFileWindow.xaml;
 
-True
+False
 

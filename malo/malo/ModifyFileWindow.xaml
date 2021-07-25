@@ -8,14 +8,16 @@
         WindowStartupLocation="CenterScreen"
         Title="ModifyFileWindow" Height="700" Width="500">
     <Grid>
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36">
                 Modify File
-            </TextBlock>
-            <DockPanel>
-                <Frame Name="frameModifyFile" Margin="12"></Frame>
-            </DockPanel>
-            
-        </StackPanel>
+                </TextBlock>
+                <DockPanel>
+                    <Frame Name="frameModifyFile" Margin="12"></Frame>
+                </DockPanel>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

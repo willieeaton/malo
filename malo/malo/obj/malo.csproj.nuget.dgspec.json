@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lappy supreme\\source\\repos\\malo\\malo\\malo\\malo.csproj": {}
+    "C:\\Users\\Icebrand\\source\\repos\\malo\\malo\\malo\\malo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lappy supreme\\source\\repos\\malo\\malo\\malo\\malo.csproj": {
+    "C:\\Users\\Icebrand\\source\\repos\\malo\\malo\\malo\\malo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lappy supreme\\source\\repos\\malo\\malo\\malo\\malo.csproj",
+        "projectUniqueName": "C:\\Users\\Icebrand\\source\\repos\\malo\\malo\\malo\\malo.csproj",
         "projectName": "malo",
-        "projectPath": "C:\\Users\\lappy supreme\\source\\repos\\malo\\malo\\malo\\malo.csproj",
-        "packagesPath": "C:\\Users\\lappy supreme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lappy supreme\\source\\repos\\malo\\malo\\malo\\obj\\",
+        "projectPath": "C:\\Users\\Icebrand\\source\\repos\\malo\\malo\\malo\\malo.csproj",
+        "packagesPath": "C:\\Users\\Icebrand\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Icebrand\\source\\repos\\malo\\malo\\malo\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lappy supreme\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Icebrand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -81,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
