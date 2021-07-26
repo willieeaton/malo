@@ -24,5 +24,10 @@ namespace malo
 
             frameModifyFile.Navigate(new SelectFileToModify());
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Close();
+        }
     }
 }

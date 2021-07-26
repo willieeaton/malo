@@ -16,6 +16,11 @@
             <DockPanel>
                 <Frame Name="frameAddFile" Margin="12"></Frame>
             </DockPanel>
+
+            <Button Name="btnCancel" Click="btnCancel_Click" Margin="0, 16, 0, 0">
+                <Button.FontWeight>Bold</Button.FontWeight>
+                <Button.Content>Cancel</Button.Content>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
